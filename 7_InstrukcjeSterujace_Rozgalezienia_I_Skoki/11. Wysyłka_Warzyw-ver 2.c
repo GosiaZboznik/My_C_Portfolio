@@ -1,19 +1,19 @@
-//11. Wysy≥ka_Warzyw--wylicza wszystkie op≥aty za zakup warzyw
+//11. Wysy≈Çka_Warzyw--wylicza wszystkie op≈Çaty za zakup warzyw
 
 #include <stdio.h>
 #include <ctype.h>
 
 #define ARBUZY 1.25			//cena arbuza za kg
-#define BURAKI 0.65			//cena burakÛw za kg
+#define BURAKI 0.65			//cena burak√≥w za kg
 #define CEBULE 0.89			//cena cebuli za kg
 #define MIN	100				//zamowienia powyzej tej kwoty premiowane sa rabatem
 #define RABAT 0.05			//rabat naliczany przed dodaniem kosztow przesylki
-#define WAGA1 5				//pierwsza granica wagi przesy≥ki
-#define WAGA2 20			//druga granica wagi przesy≥ki
-#define PRZESYLKA1 3.50		//koszt przesy≥ki nieprzekraczajacej wagi 5 kg
-#define PRZESYLKA2 10.0		//koszt przey≥ki o wadze wiÍkszej niø 5 kg ale mniejszej niø 20 kg
-#define PRZESYLKA3 8.0		//koszt przesy≥ki o wadze wynoszπcej 20 kg
-#define PRZESYLKA4 0.1		//koszt przesy≥ki za kaødy kg powyøej 20 kg
+#define WAGA1 5				//pierwsza granica wagi przesy≈Çki
+#define WAGA2 20			//druga granica wagi przesy≈Çki
+#define PRZESYLKA1 3.50		//koszt przesy≈Çki nieprzekraczajacej wagi 5 kg
+#define PRZESYLKA2 10.0		//koszt przey≈Çki o wadze wiƒôkszej ni≈º 5 kg ale mniejszej ni≈º 20 kg
+#define PRZESYLKA3 8.0		//koszt przesy≈Çki o wadze wynoszƒÖcej 20 kg
+#define PRZESYLKA4 0.1		//koszt przesy≈Çki za ka≈ºdy kg powy≈ºej 20 kg
 
 float oplaty();				//oblicza ceny produktow	
 float dostawa();			//oblicza cene przesylki
@@ -44,22 +44,31 @@ int main(void)
 			switch(ch)
 			{
 				case 'A': printf("Podaj ile kg  arbuzow chcesz zamowic?:\n");
+						  while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
 						  scanf("%d", &arbuzy);
 						  ilosc_a=ilosc_a+arbuzy;
 						  break;
 				case 'B': printf("Podaj ile kg burakow chcesz zamowic?:\n");
+						  while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
 						  scanf("%d", &buraki);
 						  ilosc_b=ilosc_b+buraki;
 						  break;
 				case 'C': printf("Podaj ile kg cebuli chcesz zamowic?:\n");
+						  while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
 						  scanf("%d", &cebule);
 						  ilosc_c=ilosc_c+cebule;
 						  break;	
 				default : printf("Wybierz jedna z dostepnych opcji.\n");
 						  break;
 			}
+		
 		else
 			printf("Rozpoznaje tylko wielkie litery.\n");
+		
+		
 		printf("Podaj kolejna litere lub K aby podsumowac zamowienie:\n");
 	}
 	
@@ -143,4 +152,3 @@ float dostawa(x)
 	return przesylka;
 	
 }
-
