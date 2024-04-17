@@ -46,20 +46,38 @@ int main(void)
 				case 'A': printf("Podaj ile kg  arbuzow chcesz zamowic?:\n");
 						  while(getchar() != '\n')
 						  		continue;				//pomija reszte wiersza wejsciowego
-						  scanf("%d", &arbuzy);
-						  ilosc_a=ilosc_a+arbuzy;
+						  if(scanf("%d", &arbuzy)==1)
+						  	ilosc_a=ilosc_a+arbuzy;
+						  else
+						  {
+						  	printf("Nie podales liczby. Sprobuj jeszcze raz.\n");
+						  	while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
+						  }	
 						  break;
 				case 'B': printf("Podaj ile kg burakow chcesz zamowic?:\n");
 						  while(getchar() != '\n')
 						  		continue;				//pomija reszte wiersza wejsciowego
-						  scanf("%d", &buraki);
-						  ilosc_b=ilosc_b+buraki;
+						  if(scanf("%d", &buraki)==1)
+						  	ilosc_b=ilosc_b+buraki;
+						  else
+						  {
+						  	printf("Nie podales liczby. Sprobuj jeszcze raz.\n");
+						  	while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
+						  }	
 						  break;
 				case 'C': printf("Podaj ile kg cebuli chcesz zamowic?:\n");
 						  while(getchar() != '\n')
 						  		continue;				//pomija reszte wiersza wejsciowego
-						  scanf("%d", &cebule);
-						  ilosc_c=ilosc_c+cebule;
+						  if(scanf("%d", &cebule)==1)
+						  	ilosc_c=ilosc_c+cebule;
+						  else
+						  {
+						  	printf("Nie podales liczby. Sprobuj jeszcze raz.\n");
+						  	while(getchar() != '\n')
+						  		continue;				//pomija reszte wiersza wejsciowego
+						  }	
 						  break;	
 				default : printf("Wybierz jedna z dostepnych opcji.\n");
 						  break;
@@ -73,7 +91,7 @@ int main(void)
 	}
 	
 	ilosc=ilosc_a+ilosc_b+ilosc_c;
-	printf("Zamowiles:\n");
+	printf("\nZamowiles:\n");
 	printf("  %d kg arbuzow po %.2f zl/kg\n",ilosc_a,ARBUZY);
 	printf("  %d kg burakow po %.2f zl/kg\n",ilosc_b, BURAKI);
 	printf("  %d kg cebuli po %.2f zl/kg\n", ilosc_c, CEBULE);
@@ -96,7 +114,7 @@ float oplaty(a,b,c)
 	cena_b=b*BURAKI;			//oblicza cene za podana ilosc burakow
 	cena_c=c*CEBULE;			//oblicza cene za podana ilosc cebuli
 	
-	printf("Ceny za zamowione przez ciebie produkty wynosza:\n");
+	printf("\nCeny za zamowione przez ciebie produkty wynosza:\n");
 	printf("  %.2f zl za arbuzy\n", cena_a);
 	printf("  %.2f zl za buraki\n", cena_b);
 	printf("  %.2f zl za cebule.\n", cena_c);
@@ -108,14 +126,14 @@ float oplaty(a,b,c)
 			printf("Laczna kwota wynosi: %.2f zl\n", cena);
 			rabat=cena*RABAT;
 			cena=cena-rabat;
-			printf("Zostal naliczony rabat w wysokosci %.2f zl.\n", rabat);
+			printf("\nZostal naliczony rabat w wysokosci %.2f zl.\n", rabat);
 			printf("Zatem kwota po rabacie wynosi: %.2f zl\n\n", cena);
 		}
 	
 	else
 		{
 			printf("Laczna kwota wynosi: %.2f zl\n", cena);
-			printf("Nie zostal naliczony zaden rabat ");
+			printf("\nNie zostal naliczony zaden rabat ");
 			printf("(5%% rabatu naliczane jest za zakupy powyzej %d zl).\n\n",MIN );
 		}	
 		
