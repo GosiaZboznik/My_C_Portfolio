@@ -1,4 +1,5 @@
 #include <stdio.h>
+// Testowa zmiana do æwiczeñ z Gita
 
 void funkcja1(void);
 void funkcja2(void);
